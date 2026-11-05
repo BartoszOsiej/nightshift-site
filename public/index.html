@@ -96,58 +96,30 @@
 <section id="preview">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">What you get</div>
-      <h2>The frame your players share.</h2>
-      <p>Two editions, one overlay. Full burns your watermark into the MP4; Lite keeps the creator banner in every recorded frame and leaves the file on your server.</p>
+      <div class="kicker">On screen</div>
+      <h2>What the viewer actually sees.</h2>
+      <p>There is no mock footage on this page. This is the field list the overlay carries, and which edition keeps it in the file afterwards.</p>
     </div>
 
-    <div class="frames">
-      <div class="frame-wrap">
-        <div class="ns-frame">
-          <div class="ns-scan"></div>
-          <div class="ns-tagline">overlay schematic</div>
-          <div class="ns-top">
-            <span class="ns-rec"></span> REC <span class="ns-sep">/</span> LSPD <span class="ns-sep">/</span> 1-ADAM-12
-          </div>
-          <div class="ns-sub"><span class="ns-case">CASE NS-2026-0001</span> <span class="ns-street">Alta St</span></div>
-          <div class="ns-tr">
-            <div class="ns-clock">21:47:03</div>
-            <div class="ns-agency">Los Santos Police Department</div>
-            <div class="ns-cond">7&deg;C CLEAR</div>
-          </div>
-          <div class="ns-bl">AXON / BODYWORN 3 <span class="ns-sep">/</span> -1124, 4912</div>
-          <div class="ns-br">
-            <div class="ns-veh">PLATE 48XK291 &nbsp; 74 KM/H</div>
-            <div class="ns-mark">NIGHTSHIFT</div>
-          </div>
-          <div class="ns-chip">FULL &middot; watermark burned by the relay</div>
-        </div>
-        <p class="frame-cap">Full edition &mdash; the exported MP4 arrives already stamped, with a playable link.</p>
-      </div>
-
-      <div class="frame-wrap">
-        <div class="ns-frame ns-lite">
-          <div class="ns-scan"></div>
-          <div class="ns-tagline">overlay schematic</div>
-          <div class="ns-band">NIGHTSHIFT BY HARTWELL LABS &nbsp;&middot;&nbsp; NIGHTSHIFT BY HARTWELL LABS &nbsp;&middot;&nbsp; NIGHTSHIFT BY HARTWELL LABS</div>
-          <div class="ns-top">
-            <span class="ns-rec"></span> REC <span class="ns-sep">/</span> BCSO <span class="ns-sep">/</span> 2-ADAM-07
-          </div>
-          <div class="ns-sub"><span class="ns-case">CASE NS-2026-0002</span> <span class="ns-street">Cassidy River</span></div>
-          <div class="ns-tr">
-            <div class="ns-clock">02:14:51</div>
-            <div class="ns-agency">Blaine County Sheriff</div>
-            <div class="ns-cond">-1&deg;C RAIN</div>
-          </div>
-          <div class="ns-bl">AXON / BODYWORN 3 <span class="ns-sep">/</span> -220, 4400</div>
-          <div class="ns-br"><div class="ns-mark">NIGHTSHIFT</div></div>
-          <div class="ns-band ns-band-b">NIGHTSHIFT BY HARTWELL LABS &nbsp;&middot;&nbsp; NIGHTSHIFT BY HARTWELL LABS &nbsp;&middot;&nbsp; NIGHTSHIFT BY HARTWELL LABS</div>
-          <div class="ns-chip">LITE &middot; 854&times;480 &middot; LOCAL ONLY</div>
-        </div>
-        <p class="frame-cap">Lite edition &mdash; the creator banner rides the frame; the file stays on your server.</p>
-      </div>
+    <div class="table-wrap">
+      <table class="policy">
+        <thead>
+          <tr><th>Field</th><th>On screen</th><th>In the exported clip</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>REC indicator</td><td>blinking dot + REC while a clip is being recorded</td><td>visible in the corner</td></tr>
+          <tr><td>Agency and callsign</td><td>agency code and callsign of the officer</td><td>visible in the corner</td></tr>
+          <tr><td>Clock</td><td>in-game time, seconds ticking</td><td>visible; the relay also burns a UTC timestamp (Full)</td></tr>
+          <tr><td>Incident number</td><td><code class="inline">NS-2026-0001</code> once recording starts</td><td>visible; burned into the header by the relay (Full)</td></tr>
+          <tr><td>Street and zone</td><td>nearest street and zone name</td><td>visible; also stored in the locker entry</td></tr>
+          <tr><td>GPS</td><td>rounded world coordinates</td><td>visible; full coordinates in the locker</td></tr>
+          <tr><td>Plate and speed</td><td>only while in a vehicle</td><td>visible; also stored in the locker entry</td></tr>
+          <tr><td>Weather and temperature</td><td>current weather label and degrees</td><td>visible; also stored in the locker entry</td></tr>
+          <tr><td>Author tag</td><td>corner watermark while the bodycam is on</td><td>burned pixels (Full) &middot; repeated banner strips (Lite)</td></tr>
+        </tbody>
+      </table>
     </div>
-    <p class="note">Both panels are diagrams of the shipped overlay values, drawn in HTML/CSS. They are not screenshots, renders or gameplay footage &mdash; the real thing appears in the clip itself.</p>
+    <p class="note">Screenshots and real clips will replace this table as soon as they are recorded on a live server. We are not shipping fake frames to fill the gap.</p>
   </div>
 </section>
 

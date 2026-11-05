@@ -89,8 +89,9 @@ framework or database dependency; permissions are plain ACEs.
 - Hero: eyebrow pill, `clamp(34px, 5.2vw, 54px)` headline with muted second
   clause, 18px lede, primary/secondary buttons.
 - Stats strip: four columns on a subtle background, bordered separators.
-- Preview: two dark 16:9 CSS mock frames (Full with amber watermark; Lite with
-  red creator bars top and bottom), labelled as a UI preview, not footage.
+- "On screen": a three-column field table (field / on screen / in the exported
+  clip) using the main stylesheet's table styling. No mock footage, no fake
+  frames.
 - Modules, editions, limits, FAQ: card grids on 1px `#e2e8f0` borders, 12px
   radii; prices use indigo primary button for Full and outline for Lite.
 - Footer: four columns on the subtle background, fine print row with location.
