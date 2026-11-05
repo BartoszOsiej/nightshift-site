@@ -1,0 +1,321 @@
+/* NIGHTSHIFT subdomain — page-specific styles.
+   Layered on top of /assets/site.css (copied from hartwell-labs.pl) so the
+   subdomain reads as the same company: same tokens, same header, same footer. */
+
+code.inline {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-size: 12.5px;
+  color: var(--txt);
+}
+
+.note {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--txt-3);
+}
+
+/* ------------------------------------------------------------- frame preview */
+
+.frames {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 18px;
+}
+
+.frame-wrap { margin: 0; }
+
+.ns-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse at 50% 40%, #16222e 0%, #0b1016 62%, #070a0e 100%);
+  color: #dbe4ee;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.14);
+}
+
+.ns-scan {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.035) 0 1px,
+    transparent 1px 3px
+  );
+  pointer-events: none;
+}
+
+.ns-top, .ns-sub, .ns-tr, .ns-bl, .ns-br { position: absolute; }
+
+.ns-top {
+  top: 14px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  font-size: 11.5px;
+  color: #f1f5f9;
+}
+
+.ns-rec {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.85);
+}
+
+.ns-sep { color: #64748b; }
+
+.ns-sub {
+  top: 34px;
+  left: 16px;
+  display: flex;
+  gap: 10px;
+  font-size: 10.5px;
+  color: #cbd5e1;
+}
+
+.ns-case { color: #fbbf24; font-weight: 600; }
+.ns-street { color: #94a3b8; }
+
+.ns-tr { top: 14px; right: 16px; text-align: right; }
+.ns-clock { font-size: 13px; font-weight: 600; color: #f1f5f9; }
+.ns-agency { font-size: 10px; color: #94a3b8; margin-top: 2px; }
+.ns-cond { font-size: 10px; color: #cbd5e1; margin-top: 2px; }
+
+.ns-bl { bottom: 14px; left: 16px; font-size: 10px; color: #94a3b8; }
+.ns-br { bottom: 12px; right: 16px; text-align: right; }
+.ns-veh { font-size: 10.5px; color: #e2e8f0; margin-bottom: 4px; }
+.ns-mark {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #e8b04b;
+}
+
+.ns-chip {
+  position: absolute;
+  left: 16px;
+  bottom: 34px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(79, 70, 229, 0.16);
+  border: 1px solid rgba(129, 140, 248, 0.45);
+  color: #c7d2fe;
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Lite: the creator strip is the story, so it gets two real bars. */
+.ns-lite .ns-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 4px 0;
+  background: rgba(0, 0, 0, 0.86);
+  border-bottom: 1px solid #ef4444;
+  color: #ff3b30;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+}
+
+.ns-lite .ns-band-b {
+  top: auto;
+  bottom: 0;
+  border-bottom: none;
+  border-top: 1px solid #ef4444;
+}
+
+.ns-lite .ns-top { top: 26px; }
+.ns-lite .ns-sub { top: 46px; }
+.ns-lite .ns-tr { top: 26px; }
+.ns-lite .ns-bl { bottom: 26px; }
+.ns-lite .ns-br { bottom: 24px; }
+.ns-lite .ns-chip { bottom: 44px; background: rgba(239, 68, 68, 0.15); border-color: rgba(248, 113, 113, 0.5); color: #fca5a5; }
+
+.frame-cap {
+  margin-top: 12px;
+  font-size: 13.5px;
+  color: var(--txt-2);
+}
+
+/* ---------------------------------------------------------------- editions */
+
+.prices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 18px;
+  margin-bottom: 34px;
+}
+
+.price {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px 26px 28px;
+  background: var(--bg);
+}
+
+.price-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.price-head h3 {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.amt {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.amt span {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--txt-3);
+  letter-spacing: 0;
+}
+
+.price-lede {
+  font-size: 14px;
+  color: var(--txt-2);
+  margin-bottom: 16px;
+}
+
+.ticks {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+}
+
+.ticks li {
+  position: relative;
+  padding-left: 22px;
+  margin: 7px 0;
+  font-size: 14px;
+  color: var(--txt-2);
+}
+
+.ticks li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 9px;
+  height: 5px;
+  border-left: 2px solid var(--green);
+  border-bottom: 2px solid var(--green);
+  transform: rotate(-45deg);
+}
+
+/* ------------------------------------------------------------------ limits */
+
+.limits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+  gap: 14px;
+}
+
+.limit {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  font-size: 14px;
+  color: var(--txt-2);
+}
+
+.limit .badge { flex: none; margin-top: 2px; }
+.limit b { color: var(--txt); font-weight: 600; }
+
+/* ----------------------------------------------------------------- install */
+
+.install-note {
+  margin-top: 18px;
+  font-size: 14.5px;
+  color: var(--txt-2);
+}
+
+.install-note b { color: var(--txt); font-weight: 600; }
+.install-note a { color: var(--accent); }
+
+/* --------------------------------------------------------------------- faq */
+
+.qa {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
+  gap: 16px;
+}
+
+.qa-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 22px;
+}
+
+.qa-item b {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 7px;
+}
+
+.qa-item p {
+  font-size: 14px;
+  color: var(--txt-2);
+}
+
+/* --------------------------------------------------------------------- buy */
+
+.buy-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 30px 34px;
+  background: var(--bg-subtle);
+}
+
+.buy-card h2 { font-size: clamp(22px, 2.6vw, 27px); }
+
+.buy-card p {
+  margin-top: 8px;
+  font-size: 14.5px;
+  color: var(--txt-2);
+  max-width: 560px;
+}
+
+.buy-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ------------------------------------------------------------------ footer */
+
+.foot-logo { margin-bottom: 14px; }

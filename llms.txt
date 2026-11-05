@@ -1,0 +1,16 @@
+# NIGHTSHIFT — nightshift.hartwell-labs.pl
+
+> Commercial FiveM resource by Hartwell Labs: bodycam, dashcam, evidence locker
+> and wilderness survival. Every death becomes a 12-second clip. Full edition
+> ($80) burns a watermark into an MP4 and posts it to Discord; Lite edition
+> ($40) records locally on the game server with a creator banner and no relay.
+
+## Pages
+
+- [NIGHTSHIFT product page](/index.md): modules, editions, prices, honest
+  limits, install steps, FAQ and the design specification.
+
+## Company
+
+- [Hartwell Labs](https://hartwell-labs.pl/): publisher.
+- [llms.txt of the main site](https://hartwell-labs.pl/llms.txt): full index.

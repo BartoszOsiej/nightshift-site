@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; manifest-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'" />
+<title>NIGHTSHIFT — bodycam, dashcam &amp; evidence locker for FiveM | Hartwell Labs</title>
+<meta name="description" content="NIGHTSHIFT turns every death and firefight on a FiveM roleplay server into a 12-second clip: bodycam overlay, dashcam triggers, evidence locker with incident numbers, and a self-hosted relay that burns your watermark and posts to Discord. Full $80, Lite $40." />
+<link rel="canonical" href="https://nightshift.hartwell-labs.pl/" />
+<meta property="og:site_name" content="Hartwell Labs" />
+<meta property="og:title" content="NIGHTSHIFT — every death becomes a clip" />
+<meta property="og:description" content="Bodycam, dashcam, evidence locker and survival for FiveM. Full edition burns your watermark into every clip and posts it to Discord; Lite records locally for servers without a relay." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://nightshift.hartwell-labs.pl/" />
+<meta property="og:image" content="https://hartwell-labs.pl/assets/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="NIGHTSHIFT — bodycam, dashcam &amp; evidence locker for FiveM" />
+<meta name="twitter:description" content="Every death becomes a 12-second clip. Full edition watermarks it and posts to Discord; Lite records locally. Standalone FiveM resource, no database." />
+<meta name="twitter:image" content="https://hartwell-labs.pl/assets/og-cover.png" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"NIGHTSHIFT","applicationCategory":"GameApplication","operatingSystem":"FiveM (FXServer)","description":"Bodycam, dashcam, evidence locker and wilderness survival for FiveM. Full edition burns a watermark into every clip and posts it to Discord; Lite edition records clips locally without a relay.","url":"https://nightshift.hartwell-labs.pl/","publisher":{"@type":"Organization","name":"Hartwell Labs","url":"https://hartwell-labs.pl/"},"offers":[{"@type":"Offer","name":"Full","price":"80","priceCurrency":"USD","description":"All modules plus the self-hosted clip relay: watermarked MP4, automatic Discord post, playable links."},{"@type":"Offer","name":"Lite","price":"40","priceCurrency":"USD","description":"All modules without the relay: clips recorded on the game server, LOCAL ONLY in the locker, creator banner in every frame."}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="manifest" href="/assets/site.webmanifest" />
+<meta name="theme-color" content="#0a0e14" />
+<link rel="stylesheet" href="/assets/site.css" />
+<link rel="stylesheet" href="/assets/page.css" />
+</head>
+<body>
+<header>
+  <div class="container header-in">
+    <a class="logo" href="https://hartwell-labs.pl/">
+      <svg width="22" height="22" viewBox="0 0 46 46" aria-hidden="true">
+        <path d="M23,2 L42,13 L42,33 L23,44 L4,33 L4,13 Z" fill="none" stroke="#4f46e5" stroke-width="3.4" stroke-linejoin="round" />
+        <polyline points="13,26 19,26 22,17 26,29 29,24 33,24" fill="none" stroke="#4f46e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      Hartwell Labs
+    </a>
+    <nav class="main">
+      <a href="#modules">Modules</a>
+      <a href="#editions">Editions</a>
+      <a href="#limits">Limits</a>
+      <a href="#install">Install</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="header-cta" href="mailto:contact@hartwell-labs.pl?subject=NIGHTSHIFT%20Full%20%E2%80%94%20%2480">Buy — $80</a>
+  </div>
+</header>
+
+<div class="container hero">
+  <div class="eyebrow">FiveM resource &middot; standalone</div>
+  <h1>Every death becomes a clip. <span class="dim">Every clip is your ad.</span></h1>
+  <p class="lede">NIGHTSHIFT puts a bodycam on your police, a dashcam in their cars and an evidence locker in the station &mdash; then turns each incident into a 12-second video stamped with your server&rsquo;s name.</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="mailto:contact@hartwell-labs.pl?subject=NIGHTSHIFT%20Full%20%E2%80%94%20%2480">Full edition &mdash; $80</a>
+    <a class="btn btn-secondary" href="mailto:contact@hartwell-labs.pl?subject=NIGHTSHIFT%20Lite%20%E2%80%94%20%2440">Lite edition &mdash; $40</a>
+    <a class="btn btn-secondary" href="#loop">How it works</a>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="container stats-in">
+    <div class="stat"><div class="n">12 s</div><div class="l">recorded per trigger</div></div>
+    <div class="stat"><div class="n">4 modules</div><div class="l">bodycam, dashcam, locker, survival</div></div>
+    <div class="stat"><div class="n">NS-2026-0001</div><div class="l">incident numbering that survives restarts</div></div>
+    <div class="stat"><div class="n">10 / min</div><div class="l">server-wide recording ceiling</div></div>
+  </div>
+</div>
+
+<section id="loop">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">The loop</div>
+      <h2>Your players generate the marketing.</h2>
+      <p>Nobody has to export, edit or upload anything. The incident triggers the record, the record becomes a file, the file lands where people already look.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-item"><div class="d">Step 1</div><div class="w"><b>A trigger fires.</b> <span>Someone dies, a firearm round hits a player nearby, or an officer hits the manual key.</span></div></div>
+      <div class="tl-item"><div class="d">Step 2</div><div class="w"><b>12 seconds record.</b> <span>From the trigger forward, from that player&rsquo;s point of view. FiveM has no replay buffer; nobody can honestly sell you the 30 seconds before.</span></div></div>
+      <div class="tl-item"><div class="d">Step 3</div><div class="w"><b>The clip gets named.</b> <span>An incident number, the server name and a UTC timestamp are attached &mdash; and on Full, burned into the pixels.</span></div></div>
+      <div class="tl-item"><div class="d">Step 4</div><div class="w"><b>It lands in three places.</b> <span>The player&rsquo;s toast, the evidence locker, and your Discord webhook.</span></div></div>
+      <div class="tl-item"><div class="d">Step 5</div><div class="w"><b>Your community posts it.</b> <span>Every share carries the server it came from.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="preview">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">What you get</div>
+      <h2>The frame your players share.</h2>
+      <p>Two editions, one overlay. Full burns your watermark into the MP4; Lite keeps the creator banner in every recorded frame and leaves the file on your server.</p>
+    </div>
+
+    <div class="frames">
+      <div class="frame-wrap">
+        <div class="ns-frame">
+          <div class="ns-scan"></div>
+          <div class="ns-top">
+            <span class="ns-rec"></span> REC <span class="ns-sep">/</span> LSPD <span class="ns-sep">/</span> 1-ADAM-12
+          </div>
+          <div class="ns-sub"><span class="ns-case">CASE NS-2026-0001</span> <span class="ns-street">Alta St</span></div>
+          <div class="ns-tr">
+            <div class="ns-clock">21:47:03</div>
+            <div class="ns-agency">Los Santos Police Department</div>
+            <div class="ns-cond">7&deg;C CLEAR</div>
+          </div>
+          <div class="ns-bl">AXON / BODYWORN 3 <span class="ns-sep">/</span> -1124, 4912</div>
+          <div class="ns-br">
+            <div class="ns-veh">PLATE 48XK291 &nbsp; 74 KM/H</div>
+            <div class="ns-mark">NIGHTSHIFT</div>
+          </div>
+          <div class="ns-chip">FULL &middot; watermark burned by the relay</div>
+        </div>
+        <p class="frame-cap">Full edition &mdash; the MP4 arrives already stamped, with a playable link.</p>
+      </div>
+
+      <div class="frame-wrap">
+        <div class="ns-frame ns-lite">
+          <div class="ns-scan"></div>
+          <div class="ns-band">NIGHTSHIFT BY HARTWELL LABS &nbsp;&middot;&nbsp; NIGHTSHIFT BY HARTWELL LABS &nbsp;&middot;&nbsp; NIGHTSHIFT BY HARTWELL LABS</div>
+          <div class="ns-top">
+            <span class="ns-rec"></span> REC <span class="ns-sep">/</span> BCSO <span class="ns-sep">/</span> 2-ADAM-07
+          </div>
+          <div class="ns-sub"><span class="ns-case">CASE NS-2026-0002</span> <span class="ns-street">Cassidy River</span></div>
+          <div class="ns-tr">
+            <div class="ns-clock">02:14:51</div>
+            <div class="ns-agency">Blaine County Sheriff</div>
+            <div class="ns-cond">-1&deg;C RAIN</div>
+          </div>
+          <div class="ns-bl">AXON / BODYWORN 3 <span class="ns-sep">/</span> -220, 4400</div>
+          <div class="ns-br"><div class="ns-mark">NIGHTSHIFT</div></div>
+          <div class="ns-band ns-band-b">NIGHTSHIFT BY HARTWELL LABS &nbsp;&middot;&nbsp; NIGHTSHIFT BY HARTWELL LABS &nbsp;&middot;&nbsp; NIGHTSHIFT BY HARTWELL LABS</div>
+          <div class="ns-chip">LITE &middot; 854&times;480 &middot; LOCAL ONLY</div>
+        </div>
+        <p class="frame-cap">Lite edition &mdash; the creator banner rides the frame; the file stays on your server.</p>
+      </div>
+    </div>
+    <p class="note">UI preview rendered in HTML/CSS from the shipped overlay values. Not gameplay footage.</p>
+  </div>
+</section>
+
+<section id="modules">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Modules</div>
+      <h2>What actually ships.</h2>
+      <p>If a feature is not on this page, it is not in the resource. That is the whole point of this site.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod">
+        <div class="row"><h4>Bodycam overlay</h4><span class="badge info">all editions</span></div>
+        <p>REC, agency, callsign, live clock, incident number, street, GPS, plate, speed, weather and temperature. Film grain, scanlines and vignette drawn in CSS, so nothing touches the render path. Hides the HUD while active and puts it back on exit.</p>
+      </div>
+      <div class="prod">
+        <div class="row"><h4>Dashcam triggers</h4><span class="badge info">all editions</span></div>
+        <p>Fires on a firearm hit within a configurable radius and on nearby sirens. A hit, not a muzzle flash &mdash; the damage event is the signal that is reliable on every game build. Cooldown, per-player quota and a server-wide ceiling included.</p>
+      </div>
+      <div class="prod">
+        <div class="row"><h4>Evidence locker</h4><span class="badge info">all editions</span></div>
+        <p>Search by case, player, street, zone or plate; filter deaths, gunfire, manual and local-only entries. Inline playback, copy link, copy case ID, admin-only delete with two-step confirmation. JSON ring buffer &mdash; no database to migrate.</p>
+      </div>
+      <div class="prod">
+        <div class="row"><h4>Wilderness survival</h4><span class="badge info">all editions</span></div>
+        <p>River currents drag players and vehicles. Wetness turns into chill, chill into shivering camera, blurred vision, aim loss and finally damage. Interiors, campfires and running vehicles warm you back up; altitude and rain make it worse.</p>
+      </div>
+      <div class="prod">
+        <div class="row"><h4>Clip relay</h4><span class="badge ok">Full</span></div>
+        <p>Self-hosted Python + ffmpeg service included in the bundle. Transcodes the WebM, burns the watermark and the incident header, extracts a poster, serves Range requests, keeps files 72 h and reports <code class="inline">/stats</code>.</p>
+      </div>
+      <div class="prod">
+        <div class="row"><h4>Creator banner</h4><span class="badge warn">Lite</span></div>
+        <p>A repeated <em>NIGHTSHIFT by Hartwell Labs</em> strip across the top and bottom of every recorded frame, independent of the bodycam. Lite records at 854&times;480 so a normal clip stays inside Discord&rsquo;s free 10 MB upload limit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="editions">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Editions</div>
+      <h2>Same source. The relay is the difference.</h2>
+      <p>Lite exists for servers whose hosting will not run Python and ffmpeg. It is the same resource &mdash; an empty relay endpoint switches it into Lite mode.</p>
+    </div>
+
+    <div class="prices">
+      <div class="price">
+        <div class="price-head"><h3>Full</h3><div class="amt">$80<span>/ server</span></div></div>
+        <p class="price-lede">For servers that can run one small VPS. Every incident becomes a watermarked MP4 that posts itself.</p>
+        <ul class="ticks">
+          <li>Everything in the modules list</li>
+          <li>Watermark and incident header burned into the file</li>
+          <li>Automatic Discord post on every clip</li>
+          <li>Playable link, copy and download in the locker</li>
+          <li>Source included, escrow-free</li>
+        </ul>
+        <a class="btn btn-primary" href="mailto:contact@hartwell-labs.pl?subject=NIGHTSHIFT%20Full%20%E2%80%94%20%2480">Buy Full — $80</a>
+      </div>
+      <div class="price">
+        <div class="price-head"><h3>Lite</h3><div class="amt">$40<span>/ server</span></div></div>
+        <p class="price-lede">For shared hosting or any box without Python and ffmpeg. Clips still record &mdash; they just stay on your server.</p>
+        <ul class="ticks">
+          <li>Everything above except the relay</li>
+          <li>854&times;480 local recordings, no upload</li>
+          <li><code class="inline">LOCAL ONLY</code> locker entries with file path and size</li>
+          <li>Creator banner in every frame</li>
+          <li>Source included, escrow-free</li>
+        </ul>
+        <a class="btn btn-secondary" href="mailto:contact@hartwell-labs.pl?subject=NIGHTSHIFT%20Lite%20%E2%80%94%20%2440">Buy Lite — $40</a>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="policy">
+        <thead>
+          <tr><th>What the buyer notices</th><th>Full — $80</th><th>Lite — $40</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Recording</td><td>screencapture, 12 s, uploaded to your relay</td><td>screencapture, 12 s, written on the game server</td></tr>
+          <tr><td>Watermark</td><td>burned into the pixels by ffmpeg</td><td>creator banner in the frame, no burn-in</td></tr>
+          <tr><td>Discord</td><td>file posted automatically, with case and metadata</td><td>nothing is posted automatically</td></tr>
+          <tr><td>Locker entry</td><td>playable link, download button</td><td><code class="inline">LOCAL ONLY</code>, file path and size</td></tr>
+          <tr><td>Cleanup</td><td>relay expires files after 72 h</td><td>you keep the files; the index still purges on retention</td></tr>
+          <tr><td>Extra infrastructure</td><td>one VPS with Python 3 + ffmpeg (~$5/mo)</td><td>none</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Optional installation service for the relay: $40. Updates free for 12 months on both editions.</p>
+  </div>
+</section>
+
+<section id="limits">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Honest limits</div>
+      <h2>What this does not do.</h2>
+      <p>Read this before buying. Every one of these is a real constraint of FiveM or of the edition, not a bug we are hiding.</p>
+    </div>
+    <div class="limits">
+      <div class="limit"><span class="badge crit">no</span><div><b>No &ldquo;last 30 seconds before death&rdquo;.</b> There is no replay buffer in FiveM. We record 12 seconds from the trigger, which is what actually works.</div></div>
+      <div class="limit"><span class="badge crit">no</span><div><b>No audio.</b> FiveM&rsquo;s game-view capture exposes no game audio, so clips are video only.</div></div>
+      <div class="limit"><span class="badge warn">care</span><div><b>Metadata is roleplay data.</b> Street, plate and speed come from the client at trigger time and are sanitised server-side, but a modified client can lie about its own vehicle.</div></div>
+      <div class="limit"><span class="badge crit">no</span><div><b>No live feed to in-game monitors.</b> There is no native render-to-texture path in this resource.</div></div>
+      <div class="limit"><span class="badge warn">care</span><div><b>Lite banners can be cropped.</b> The banner is drawn into the recording, not burned by a relay. Someone who re-encodes and crops can remove it &mdash; that is why Full exists.</div></div>
+      <div class="limit"><span class="badge warn">care</span><div><b>Full depends on the relay.</b> If it is down, clips are not uploaded and the player is told so. Lite has no relay to fail.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Install</div>
+      <h2>Five minutes, no database.</h2>
+      <p>Drop the resource in, start the recording engine, grant the locker to your police group. Full also gets the relay running on any VPS.</p>
+    </div>
+    <div class="cmd"><code>ensure screencapture</code><button class="cp" data-code="ensure screencapture">COPY</button></div>
+    <div class="cmd"><code>ensure nightshift</code><button class="cp" data-code="ensure nightshift">COPY</button></div>
+    <div class="cmd"><code>add_ace group.police nightshift.evidence allow</code><button class="cp" data-code="add_ace group.police nightshift.evidence allow">COPY</button></div>
+    <div class="cmd"><code>add_ace group.admin nightshift.admin allow</code><button class="cp" data-code="add_ace group.admin nightshift.admin allow">COPY</button></div>
+    <p class="install-note"><b>Full:</b> deploy <code class="inline">clipd/</code>, set <code class="inline">NIGHTSHIFT_TOKEN</code>, then fill <code class="inline">endpoint</code>, <code class="inline">token</code> and <code class="inline">webhook</code> in <code class="inline">server/config_server.lua</code>. <b>Lite:</b> skip that step and leave <code class="inline">endpoint</code> empty.</p>
+    <p class="install-note">Requirements: FXServer <code class="inline">cerulean</code> or newer, and the free open-source <a href="https://github.com/itschip/screencapture">screencapture</a> resource. No ESX, QBCore or ox_core dependency &mdash; permissions are plain ACEs.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">FAQ</div>
+      <h2>The questions that decide the purchase.</h2>
+    </div>
+    <div class="qa">
+      <div class="qa-item"><b>Does it work with ESX or QBCore?</b><p>It does not care. Everything is ACE permissions, so it runs with any framework or none.</p></div>
+      <div class="qa-item"><b>Does it need a database?</b><p>No. The locker is a JSON ring buffer on disk: 500 clips and 7 days by default, both configurable, purged on boot and on demand.</p></div>
+      <div class="qa-item"><b>Why only 12 seconds?</b><p>FiveM cannot rewind. screencapture records forward from the moment it is called. Anyone selling &ldquo;last 30 seconds&rdquo; is buffering video on the client and hiding the cost.</p></div>
+      <div class="qa-item"><b>Will a Lite clip fit Discord?</b><p>Lite records at 854&times;480 for that reason. The locker tells you the file size and whether the clip is inside Discord&rsquo;s free 10 MB upload limit before you post it.</p></div>
+      <div class="qa-item"><b>Can players remove the watermark?</b><p>On Full, no: the relay burns it into the pixels before the file exists. On Lite the banner is part of the picture and a re-encode can crop it.</p></div>
+      <div class="qa-item"><b>Is there a trial?</b><p>No trial build. The clips on this page and in the thread are the demo &mdash; they are rendered from the shipped overlay, not concept art.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="container">
+    <div class="buy-card">
+      <div>
+        <h2>Built for servers that live on content.</h2>
+        <p>Source included, no escrow, no obfuscation. One licence per server. Support is a Discord ticket with a 48 hour response, and updates are free for 12 months.</p>
+      </div>
+      <div class="buy-actions">
+        <a class="btn btn-primary" href="mailto:contact@hartwell-labs.pl?subject=NIGHTSHIFT%20order">Order NIGHTSHIFT</a>
+        <a class="btn btn-secondary" href="https://hartwell-labs.pl/company">About Hartwell Labs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="logo foot-logo">
+        <svg width="20" height="20" viewBox="0 0 46 46" aria-hidden="true"><path d="M23,2 L42,13 L42,33 L23,44 L4,33 L4,13 Z" fill="none" stroke="#4f46e5" stroke-width="3.4" stroke-linejoin="round" /></svg>
+        Hartwell Labs
+      </div>
+      <p class="about">Independent engineering company. Security systems, languages and tools &mdash; built in the open.</p>
+    </div>
+    <div>
+      <h5>NIGHTSHIFT</h5>
+      <a href="#modules">Modules</a>
+      <a href="#editions">Editions</a>
+      <a href="#limits">Honest limits</a>
+      <a href="#install">Install</a>
+    </div>
+    <div>
+      <h5>Hartwell Labs</h5>
+      <a href="https://hartwell-labs.pl/">Home</a>
+      <a href="https://hartwell-labs.pl/company">Company</a>
+      <a href="https://hartwell-labs.pl/security">Security &amp; disclosure</a>
+      <a href="https://hartwell-labs.pl/privacy/">Privacy policy</a>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <a href="mailto:contact@hartwell-labs.pl">contact@hartwell-labs.pl</a>
+      <a href="https://github.com/Hartwell-Labs">GitHub organization</a>
+      <a href="https://github.com/itschip/screencapture">screencapture</a>
+    </div>
+  </div>
+  <div class="container f-fine">
+    <span>&copy; 2026 Hartwell Labs. NIGHTSHIFT is a commercial FiveM resource; one licence per server.</span>
+    <span>Szczecin, Poland</span>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
