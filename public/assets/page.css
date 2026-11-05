@@ -27,19 +27,35 @@ code.inline {
 
 .frame-wrap { margin: 0; }
 
+/* A schematic, not a screenshot: flat slate with a light grid, so nobody
+   mistakes it for captured gameplay. */
 .ns-frame {
   position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border: 1px solid #1e293b;
   border-radius: 12px;
-  background:
-    radial-gradient(ellipse at 50% 40%, #16222e 0%, #0b1016 62%, #070a0e 100%);
+  background-color: #0d1117;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.10) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px;
   color: #dbe4ee;
   font-family: "JetBrains Mono", ui-monospace, monospace;
   font-size: 12px;
   letter-spacing: 0.04em;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.14);
+}
+
+.ns-tagline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 9.5px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.55);
+  white-space: nowrap;
 }
 
 .ns-scan {
@@ -47,8 +63,8 @@ code.inline {
   inset: 0;
   background: repeating-linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0.035) 0 1px,
-    transparent 1px 3px
+    rgba(255, 255, 255, 0.02) 0 1px,
+    transparent 1px 4px
   );
   pointer-events: none;
 }
