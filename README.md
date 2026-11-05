@@ -1,5 +1,12 @@
 # nightshift.hartwell-labs.pl — static site
 
+**Live:** https://nightshift.hartwell-labs.pl/  
+**Repo:** https://github.com/BartoszOsiej/nightshift-site  
+**Hosting:** Cloudflare Pages project `nightshift`, connected to `main`. A push
+builds and deploys automatically (no build command, output = repo root).  
+**DNS:** proxied CNAME `nightshift` → `nightshift-jza.pages.dev` in the
+`hartwell-labs.pl` zone.
+
 Product page for the NIGHTSHIFT FiveM resource. Plain HTML/CSS/JS, no build
 step, no dependencies: copy this folder to the subdomain root and it works.
 
