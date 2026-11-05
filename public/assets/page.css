@@ -2,6 +2,15 @@
    Layered on top of /assets/site.css (copied from hartwell-labs.pl) so the
    subdomain reads as the same company: same tokens, same header, same footer. */
 
+/* Secondary text, darkened for this page. The main site's greys (#475569 body,
+   #94a3b8 muted) read as washed out here — the muted one was 2.6:1 on white.
+   These are the same slate family, just far enough down the scale to be easy to
+   read: 10.4:1 and 4.8:1 on white. */
+:root {
+  --txt-2: #334155;
+  --txt-3: #64748b;
+}
+
 code.inline {
   background: var(--bg-subtle);
   border: 1px solid var(--border);
