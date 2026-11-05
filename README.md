@@ -3,7 +3,7 @@
 **Live:** https://nightshift.hartwell-labs.pl/  
 **Repo:** https://github.com/BartoszOsiej/nightshift-site  
 **Hosting:** Cloudflare Pages project `nightshift`, connected to `main`. A push
-builds and deploys automatically (no build command, output = repo root).  
+builds and deploys automatically (no build command, output = `public/`).  
 **DNS:** proxied CNAME `nightshift` → `nightshift-jza.pages.dev` in the
 `hartwell-labs.pl` zone.
 
@@ -12,15 +12,22 @@ step, no dependencies: copy this folder to the subdomain root and it works.
 
 ```
 site/
-├── index.html          the page
-├── index.md            markdown twin (the "AI" button in the header links here)
-├── llms.txt            index for LLM crawlers, same convention as hartwell-labs.pl
-└── assets/
-    ├── site.css        copied 1:1 from hartwell-labs.pl/assets/site.css
-    ├── site.js         copied 1:1 (COPY buttons + AI/llms.txt links)
-    ├── page.css        page-specific additions (preview frames, prices, cards)
-    └── favicon*/icon*/apple-touch-icon/site.webmanifest
+├── README.md           this file (repo only — not published)
+└── public/             the published root of the subdomain
+    ├── index.html      the page
+    ├── index.md        markdown twin (the "AI" button in the header links here)
+    ├── llms.txt        index for LLM crawlers, same convention as hartwell-labs.pl
+    ├── robots.txt      points at the sitemap
+    ├── sitemap.xml     one URL, the product page
+    └── assets/
+        ├── site.css    copied 1:1 from hartwell-labs.pl/assets/site.css
+        ├── site.js     copied 1:1 (COPY buttons + AI/llms.txt links)
+        ├── page.css    page-specific additions (preview frames, prices, cards)
+        └── favicon*/icon*/apple-touch-icon/site.webmanifest
 ```
+
+Pages publishes `public/` only (`destination_dir` in the project build
+settings), so this README and the repo metadata never show up on the site.
 
 ## Design rules
 
