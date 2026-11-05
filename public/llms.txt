@@ -8,7 +8,8 @@
 ## Pages
 
 - [NIGHTSHIFT product page](/index.md): modules, editions, prices, honest
-  limits, install steps, FAQ and the design specification.
+  limits, install steps and FAQ.
+- [Everything as one file](/llms-full.txt): the whole page in a single file.
 
 ## Company
 
